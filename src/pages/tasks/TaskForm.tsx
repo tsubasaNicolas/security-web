@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 
 function TaskForm() {
-  const { createTask, getTask, updateTask } = useTasks();
+  const { createTask, getTask, updateTask }: any = useTasks();
   const [task, setTask] = useState({
     title: "",
     description: "",
@@ -69,7 +69,7 @@ function TaskForm() {
               <label className="block">Descripción</label>
               <textarea
                 name="description"
-                rows="3"
+                rows={3}
                 placeholder="Escribe una descripción"
                 onChange={handleChange}
                 className="px-2 py-1 rounded-sm w-full"

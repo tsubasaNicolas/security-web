@@ -7,7 +7,7 @@ import { FaPlusSquare } from "react-icons/fa";
 import ButtonAdd from "../../components/ButtonAdd";
 
 function TasksPage() {
-  const { tasks, loadTasks } = useTasks();
+  const { tasks, loadTasks }: any = useTasks();
 
   useEffect(() => {
     loadTasks();
@@ -15,7 +15,9 @@ function TasksPage() {
 
   function renderMain() {
     if (tasks.length === 0) return <h1>No hay tareas aún</h1>;
-    return tasks.map((task) => <TaskCard task={task} key={task.id} />);
+    return tasks.map((task: { id: any }) => (
+      <TaskCard task={task} key={task.id} />
+    ));
   }
 
   return (

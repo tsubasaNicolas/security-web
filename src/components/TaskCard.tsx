@@ -2,9 +2,10 @@ import { useTasks } from "../context/taskscontext/TaskProvider";
 import { useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import "dayjs/locale/es";
+import { FC } from "react";
 
-function TaskCard({ task }: any) {
-  const { deleteTask, toggleTaskDone, loadTasks } = useTasks();
+const TaskCard = ({ task }:any) => {
+  const { deleteTask, toggleTaskDone, loadTasks }:any = useTasks();
   const navigate = useNavigate();
 
   const handleDone = async () => {
@@ -48,6 +49,6 @@ function TaskCard({ task }: any) {
       </div>
     </div>
   );
-}
+};
 
 export default TaskCard;

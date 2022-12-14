@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { FC, SetStateAction, useContext, useState } from "react";
 import {
   getTasksRequest,
   deleteTaskRequest,
@@ -19,7 +19,11 @@ export const useTasks = () => {
   return context;
 };
 
-export const TaskContextProvider = ({ children }: any) => {
+interface IProps {
+  children: React.ReactNode;
+}
+
+export const TaskContextProvider: FC<IProps> = ({ children }: any) => {
   const [tasks, setTasks] = useState([]);
 
   async function loadTasks() {
@@ -63,10 +67,13 @@ export const TaskContextProvider = ({ children }: any) => {
     }
   };
 
-  const toggleTaskDone = async (id: number) => {
+  /*  const toggleTaskDone = async (id: number) => {
     try {
-      const taskFound: any = tasks.find((task: ITask) => task.id === id);
+      const taskFound:any = tasks.find(
+        (task: SetStateAction<never[]>) => task.id === id
+      );
       await toggleTaskDoneRequest(id, taskFound.done === 0 ? true : false);
+
       setTasks(
         tasks.map((task) =>
           task.id === id ? { ...task, done: !task.done } : task
@@ -76,7 +83,7 @@ export const TaskContextProvider = ({ children }: any) => {
       console.error(error);
     }
   };
-
+ */
   return (
     <TaskContext.Provider
       value={{
@@ -86,7 +93,7 @@ export const TaskContextProvider = ({ children }: any) => {
         createTask,
         getTask,
         updateTask,
-        toggleTaskDone,
+        //  toggleTaskDone,
       }}
     >
       {children}
