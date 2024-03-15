@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IEstadoLocal } from "../interfaces/ILocal";
 
-const url = "https://backend-security.herokuapp.com/cierre";
+const url = "https://backend-security-production.up.railway.app/cierre";
 export const getRegistrosEstadoLocales = async () =>
   await axios.get(url + "/locales");
 
