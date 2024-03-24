@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ILocal } from "../interfaces/ILocal";
 
-const url = "https://backend-security.herokuapp.com/locales";
+const url = "https://backend-security-production.up.railway.app/locales";
 export const getLocales = async () => await axios.get(url);
 
 export const createLocalRequest = async (local: ILocal) =>

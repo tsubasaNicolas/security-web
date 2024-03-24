@@ -5,7 +5,7 @@ interface ITask {
   description: string;
 }
 
-const url = "https://backend-security.herokuapp.com/tasks";
+const url = "https://backend-security-production.up.railway.app/tasks";
 
 export const getTasksRequest = async () => await axios.get(url);
 

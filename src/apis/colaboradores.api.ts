@@ -1,7 +1,7 @@
 import axios from "axios";
 import { IColaborador } from "../interfaces/IColaborador";
 
-const url = "https://backend-security.herokuapp.com/colaboradores";
+const url = "https://backend-security-production.up.railway.app/colaboradores";
 export const getColaboradoresRequest = async () => await axios.get(url);
 
 export const createColaboradorRequest = async (colaborador: IColaborador) =>
