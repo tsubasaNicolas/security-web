@@ -21,6 +21,7 @@ import LocalForm from "./pages/locales/LocalForm";
 import { ControlContextProvider } from "./context/controlcontext/ControlProvider";
 import Navbar2 from "./components/Navbar2";
 import Documentation from "./pages/Documentation";
+import Resumen from "./pages/Resumen";
 
 function App() {
   const { user }: any = UserAuth();
@@ -144,7 +145,8 @@ function App() {
                     </Protected>
                   }
                 />
-                <Route path="/documentacion" element={<Documentation />} />
+                <Route path="/documentation" element={<Documentation />} />
+                <Route path="/resumen" element={<Resumen />} />
               </Routes>
             </ControlContextProvider>
           </TaskContextProvider>

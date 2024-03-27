@@ -4,8 +4,8 @@ import dayjs from "dayjs";
 import "dayjs/locale/es";
 import { FC } from "react";
 
-const TaskCard = ({ task }:any) => {
-  const { deleteTask, toggleTaskDone, loadTasks }:any = useTasks();
+const TaskCard = ({ task }: any) => {
+  const { deleteTask, toggleTaskDone, loadTasks }: any = useTasks();
   const navigate = useNavigate();
 
   const handleDone = async () => {
@@ -18,7 +18,7 @@ const TaskCard = ({ task }:any) => {
       className={
         task.done === 1
           ? "bg-teal-700 text-white rounded-md p-4"
-          : "bg-red-900 text-white rounded-md p-4"
+          : "bg-red-800 text-white rounded-md p-4"
       }
     >
       <header className="flex justify-between">
